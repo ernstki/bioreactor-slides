@@ -5,6 +5,7 @@
 @import url(../../lib/font/league-gothic/league-gothic.css);
 @import url(../../lib/font/primus/primus.css);
 @import url('//fonts.googleapis.com/css?family=Oswald:300,400');
+@import url('//fonts.googleapis.com/css?family=Orbitron');
 /* @import url('https://fonts.googleapis.com/css?family=Open+Sans'); */
 /* @import url(//fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic); */
 /**
@@ -84,7 +85,7 @@ figcaption {
 .reveal h6 {
   margin: 0 0 20px 0;
   color: #eee8d5;
-  font-family: "Primus Regular", "League Gothic", Impact, sans-serif;
+  font-family: "Primis Regular", "Orbitron", Impact, sans-serif;
   font-weight: normal;
   line-height: 1.2;
   letter-spacing: normal;
