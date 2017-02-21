@@ -55,10 +55,10 @@
 
             <p>
               <small>
-                <a href="http://www.cincinnatichildrens.org/research/divisions/a/genomics-etiology/labs/weirauch/default/">
-                  Weirauch Transcription Factor Research Lab</a><br>
-                Cincinnati Children's Hospital Medical Center<br>
-                Center for Autoimmune Genomics and Etiology
+                <!--a href="http://www.cincinnatichildrens.org/research/divisions/a/genomics-etiology/labs/weirauch/default/"-->
+                Weirauch Transcription Factor Research Lab<br>
+                Center for Autoimmune Genomics and Etiology<br>
+                Cincinnati Children's Hospital Medical Center
               </small>
             </p>
 
@@ -72,10 +72,10 @@
         <section no-data-background="img/inra_dist_22587436872.jpg">
           <section>
             <h1 class="bar">The Team</h1>
-            <p class="pad-me">
+            <!--p class="pad-me">
               We are a team of Computer Science undergraduates at the
               University of Cincinnati<br>
-            </p>
+            </p-->
 
             <p>
               <a href="mailto:albertbi -at- mail.uc.edu">Ben Albert</a> &bull;
@@ -94,7 +94,7 @@
             </a> of CEAS
           </section>
 
-          <section>
+          <!--section>
             <h2 class="bar">The Weirauch Lab</h2>
             <p class="pad-me">
               The Weirauch Lab studies mechanisms of gene transcriptional
@@ -110,7 +110,8 @@
               <a href="https://www.cincinnatichildrens.org/research/divisions/a/genomics-etiology/labs/weirauch">
                 The lab</a>
               comprises between 3 and 8 people, depending on the season</small></p>
-          </section>
+          </section-->
+
         </section><!-- about your presenters -->
 
         <!-- project goal -->
@@ -134,11 +135,11 @@
           </section>
 
           <section>
-            <h2 class="bar">Background</h2>
+            <h1 class="bar">Background</h1>
             <p>Information flow from DNA &rarr; proteins</p>
             <a href="https://en.wikipedia.org/wiki/Central_dogma_of_molecular_biology">
               <figure>
-                <img style="height:300px" src="img\Central_Dogma_of_Molecular_Biochemistry_with_Enzymes.jpg">
+                <img style="height:300px" src="img/Central_Dogma_of_Molecular_Biochemistry_with_Enzymes.jpg">
               </figure>
             </a>
             <div class="credit">
@@ -163,20 +164,21 @@
           </section>
  
           <section>
-            <h2 class="bar">
+            <!-- FIXME: This should be moved after Ben's slides -->
+            <h3 class="bar">
               Designing a reusable solution
-            </h2>
-            <p>It's a common use case for bioinformaticicans to want to create web
-            interfaces for their tools, so that non-Unixy collaborators can
-            use them.</p>
+            </h3>
+            <p class="pad-me">It's a common use case for bioinformaticicans to
+            want to create web interfaces for their tools, so that non-Unixy
+            collaborators can use them.</p>
           </section>
           <section>
             <h2 class="bar">&hellip;and so:</h2>
-            <p>
+            <p class="pad-me">
               We intend to produce a modular, reusable solution for a more
               general class of problem:
             </p>
-            <p class="fragment">
+            <p class="pad-me fragment">
               quickly adding a web interface on top of an existing
               (command line-based) bioinformatics analysis pipeline.
             </p>
@@ -186,7 +188,7 @@
         <!-- intellectual merits -->
         <section no-data-background="img/blueridgekitties_3823220154.jpg">
           <section>
-            <h1 class="bar">Intellectual Merits</h1>
+            <h2 class="bar">Intellectual Merits</h2>
 
             <!--
             Statements about the interesting, novel, or original contributions
@@ -257,21 +259,28 @@
             <h1 class="bar">Main Impact</h1>
             <ul>
               <li>
-                aids non-profit organizations for continued efforts of research
+                direct benefit to Weirauch Lab research on viral TFs
               </li>
               <li>
-                speeds up research to find links between diseases and viral DNA
+                aids discovery of disease-related links between human
+                / viral DNA
               </li>
               <li>
-                framework to allow new tools to be made quickly
+                framework allows new analysis tools to be spun up quickly
               </li>
             </ul>
           </section>
           <section>
-            <h1 class="bar">Beneficial Side Effect</h1>
+            <h1 class="bar">Side Benefits</h1>
             <ul>
               <li>
-                open source - helps bioinformaticians learn to construct own tools
+                open source - bioinformaticians can construct web UI for own tools
+              </li>
+              <li>
+                possible code contributions from other developers
+              </li>
+              <li>
+                feedback from users (<em>e.g.</em>, on GitHub issue tracker)
               </li>
             </ul>
           </section>
@@ -339,11 +348,15 @@
         <section no-data-background="img/blueridgekitties_14705848177.jpg">
           <section>
             <h1 class="bar">Architecture</h1>
-            (we're talking about Bioreactor again here)<br>
+            <p>
+            Database-backed web application, written in Python.<br>
+            Front end UI fetches from a REST API backend.
+            </p>
+
             <figure>
               <a href="diagrams/design-L0.png">
                 <img class="plain" style="max-height:400px"
-                 src="img\dd-l0-overview.png">
+                 src="img/dd-l0-overview.png">
               </a>
               <figcaption>
                 Analysis overview flowchart
@@ -351,33 +364,28 @@
               </figcaption>
             </figure>
           </section>
+
           <section>
-            <h2 class="bar">Input validation / submission</h2>
-            <p>
-              The analysis has has tunable parameters, some of which are
-              queried from REST endpoints on the server<br>(noun-like and
-              verb-like web APIs)
+            <h2 class="bar">Validation / submission</h2>
+            <p class="pad-me">
+              The analysis has has tunable parameters, most of which are
+              queried from REST endpoints on the server.
             </p>
-            <figure>
-              <img class="plain" style="max-height:350px"
-               src="img\dd-l0-web-fe.png">
-              <figcaption>Input, validation, and job submission</figcaption>
-            </figure>
           </section>
+
           <section>
-            <h2 class="bar">Retrieval and visualization</h2>
+            <h2 class="bar">Retrieval / visualization</h2>
             <p>
               Results of the analysis can be displayed in tabular form,
               downloaded, or visualized graphically as a
-              <a href="img/consensus_logo.jpg">sequence logo</a>.
+              <span class="hilite">sequence logo</span>.
             </p>
             <figure>
               <img class="plain" style="max-height:350px"
-               src="img\dd-l0-results-and-retrieval.png">
-              <figcaption>Job retrieval and visualization</figcaption>
+               src="img/consensus_logo.jpg">
             </figure>
             <div class="credit">
-              <p>See also:
+              <p>see also:
                 <a href="https://en.wikipedia.org/wiki/Sequence_logo">Sequence logo</a>
                 on Wikipedia
               </p>
@@ -389,60 +397,14 @@
         <section no-data-background="img/flickr71183136_7131296647.jpg">
           <section>
             <h1 class="bar">Plumbing</h1>
-            <figure>
-              <a href="diagrams/design-L1.png">
-                <img class="plain" style="max-height:400px"
-                 src="img\dd-l1-overview.png">
-              </a>
-              <figcaption>
-                Detailed flowchart of front-end functions: input, parameter
-                selection, and display of results
-                [<a href="diagrams/design-L1.png">full-size view</a>]
-              </figcaption>
-            </figure>
           </section>
 
           <section>
-            <h2 class="bar">Plumbing (cont'd)</h2>
-            <h3>Input and analysis parameter selection</h3>
-            <figure>
-              <img class="plain" style="max-height:400px" src="img\dd-l1-web-fe.png">
-              <!-- <figcaption> -->
-              <!--   Input and analysis parameter selection -->
-              <!-- </figcaption> -->
-            </figure>
-          </section>
-
-          <section>
-            <h2 class="bar">Plumbing (cont'd)</h2>
-            <h3>Display, visualize, or download results</h3>
-            <figure>
-              <img class="plain" style="max-height:400px"
-               src="img\dd-l1-results-and-retrieval.png">
-              <figcaption>
-                Output data is tab-delimited BED format, but may be useful to
-                visualize it as a
-                <a href="https://en.wikipedia.org/wiki/Sequence_logo">sequence logo</a>,
-                too.
-              </figcaption>
-            </figure>
-          </section>
-
-          <section>
-            <h2 class="bar">REST APIs & cluster interface</h2>
+            <h1 class="bar">REST APIs</h1>
 
             <!-- (<strong>HPC</strong>: <em>high-performance computing</em>) -->
             (<strong><a href="https://en.wikipedia.org/wiki/Representational_state_transfer">REST</a></strong>:
             <em>Representational State Transfer</em>)
-            <figure>
-              <a href="diagrams/design-L2.png">
-                <img class="plain" style="max-height:400px;"
-                 src="img\dd-l2-overview.png">
-              </a>
-              <figcaption>
-                [<a href="diagrams/design-L2.png">full-size view</a>]
-              </figcaption>
-            </figure>
           </section>
 
           <!-- <section> -->
@@ -492,10 +454,6 @@
             </figure>
           </section>
         </section><!-- ui wireframes -->
-
-
-        <section class="embed" data-state="embed" data-background-iframe="https://bioreactor:supersecret@ernstki.pythonanywhere.com">
-        </section>
 
         <!-- milestones -->
         <section no-data-background="img/inra_dist_22600912055.jpg">
@@ -706,12 +664,18 @@
            </section>
         </section> <!-- progress -->
 
+        <section class="embed" data-state="embed" data-background-iframe="https://bioreactor:supersecret@ernstki.pythonanywhere.com">
+        </section>
+
         <!-- credits -->
         <section no-data-background="img/inra_dist_22726188208.jpg">
           <section>
             <h1 class="bar">Credits</h1>
             <h3>The Weirauch Lab Team</h3>
-            The following people contributed to CressInt's development
+            <p class="pad-me">
+              The following people contributed to the development of Bioreactor's
+              predecessor, <a href="https://cressint.cchmc.org">CressInt</a>:
+            </p>
             <ul>
               <li><a href="Matthew.Weirauch -at- cchmc.org">Dr. Matthew Weirauch</a>
                 - <em>Principal Investigator</em></li>
@@ -726,7 +690,7 @@
             </ul>
           </section>
 
-          <section>
+          <!--section>
             <h2 class="bar">Credits (cont'd)</h2>
             <h3>Images</h3>
             <ul>
@@ -742,17 +706,17 @@
                 href="https://commons.wikimedia.org/wiki/Main_Page">Wikimedia
               Commons</a></li>
             </ul>
-          </section>
+          </section-->
 
           <section>
             <h1 class="bar">Links</h1>
             <ul >
-              <li><a href="https://cressint.cchmc.org/cressint/">CressInt public
-                web site</a></li>
+              <!-- <li><a href="https://cressint.cchmc.org/cressint/">CressInt
+                public web site</a></li> -->
               <li>
                 <a href="http://www.sciencedirect.com/science/article/pii/S2214662815000110">
-                  <em>CressInt: A user-friendly web resource for genome-scale
-                  exploration of gene regulation in Arabidopsis thaliana</em>
+                  CressInt: A user-friendly web resource for genome-scale
+                  exploration of gene regulation in Arabidopsis thaliana
                 </a> - <em>Current Plant Biology</em>, Sep 2015
               </li>
               <li>
@@ -775,12 +739,11 @@
         <section no-data-background="img/large-cumulus-clouds-1.jpg">
           <section>
             <h1 class="bar">THE END</h1>
-            <h3>Thanks for your kind attention.</h3>
             <!-- <p><big><code>;)</code></big></p> -->
           </section>
           <section>
-            <h3>&hellip;and here's a fluffy kitten:</h3>
-            <img class="notplain" src="img\kitten.jpg">
+            <h3>Thanks.</h3>
+            <img class="notplain" src="img/kitten+baby_owl.jpg">
           </section>
         </section>
 
