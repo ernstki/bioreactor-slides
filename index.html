@@ -19,17 +19,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 
     <link rel="stylesheet" href="css/reveal.css">
-    <link rel="stylesheet" href="css/theme/solarized.css" id="theme">
-
-    <!-- GitHub Octicons: https://octicons.github.com/ -->
-    <!-- <link rel="stylesheet" href="vendor/octicons/octicons.css"> -->
+    <link rel="stylesheet" href="css/theme/moon.css" id="theme">
 
     <!-- Code syntax highlighting -->
-    <link rel="stylesheet" href="lib/css/sunburst.css">
-
-    <!-- see https://www.html5rocks.com/en/tutorials/webcomponents/imports/ -->
-    <!-- <script src="js/webcomponents-lite.js"></script> -->
-    <!-- <link rel="import" href="web_app_architecture.html"> -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
 
     <!-- Printing and PDF exports -->
     <script>
@@ -54,7 +47,7 @@
       <div class="slides">
         <section>
           <section no-data-background="img/pexels_meadow-grass-sunshine-9056.jpg">
-            <h1 class="bar" style="text-transform:none;">
+            <h1 class="nobar" style="text-transform:none;">
               <img class="plain" style="height:100px" src="img/logo.png">
             </h1>
 
@@ -86,13 +79,13 @@
             </p>
 
             <p>
-              <a href="mailto:albertbi -atsign- mail.uc.edu">Ben Albert</a> &bull;
+              <a href="mailto:albertbi -at- mail.uc.edu">Ben Albert</a> &bull;
               <!--a href="http://twitter.com/ernstki">@ernstki</a-->
-              <a href="mailto:arvinbd -atsign- mail.uc.edu">Brad Arvin</a> &bull;
+              <a href="mailto:arvinbd -atn- mail.uc.edu">Brad Arvin</a> &bull;
               <!--a href="http://twitter.com/ernstki">@ernstki</a-->
-              <a href="mailto:dickhajm -atsign- mail.uc.edu">Juanita Dickhaus</a> &bull;
+              <a href="mailto:dickhajm -at- mail.uc.edu">Juanita Dickhaus</a> &bull;
               <!--<a href="http://twitter.com/ernstki">@ernstki</a>-->
-              <a href="mailto:ernstki -atsign- cchmc.org">Kevin Ernst</a></br>
+              <a href="mailto:ernstki -at- cchmc.org">Kevin Ernst</a></br>
               <!--<a href="http://twitter.com/ernstki">@ernstki</a>-->
             </p>
 
@@ -118,43 +111,11 @@
               erythematosus</em>)
             </p>
             <p class="more-padding fragment"><small>
-              <a href="https://www.cincinnatichildrens.org/research/divisions/a/genomics-etiology/labs/weirauch">We</a>
-              are between 3 and 8 people, depending on the season</small></p>
+              <a href="https://www.cincinnatichildrens.org/research/divisions/a/genomics-etiology/labs/weirauch">
+                The lab</a>
+              comprises between 3 and 8 people, depending on the season</small></p>
           </section>
         </section><!-- about your presenters -->
-
-         <!-- Background terminology -->
-        <section no-data-background="img/electrophoresis.jpg">
-          <section>
-            <h1 class="bar">"Bioinformatics"</h1>
-            <h3 class="nobar">Crick's "Central Dogma"</h3>
-            <a href="https://en.wikipedia.org/wiki/Central_dogma_of_molecular_biology">
-              <figure>
-                <img style="height:300px" src="img\Central_Dogma_of_Molecular_Biochemistry_with_Enzymes.jpg">
-                <figcaption>Information flow in biological systems</figcaption>
-              </figure>
-            </a>
-            <div class="credit">
-              <p>
-                source: <a href="https://en.wikipedia.org/wiki/Central_dogma_of_molecular_biology">
-                Central dogma of molecular biology</a>
-              </p>
-            </div>
-          </section>
-          <section>
-            <h2 class="bar">"Functional genomics"</h2>
-            <p>
-              It's a field of molecular biology that draws insight from
-              whole-genome sequencing data (<em>e.g.</em>, from the <a
-              href="https://en.wikipedia.org/wiki/Human_Genome_Project">Human
-              Genome Project</a>)
-            </p>
-            <p class="fragment">
-              &hellip;to describe gene and protein interactions, and their
-              functions within an organism.
-            </p>
-          </section>
-        </section><!-- Background terminology -->
 
         <!-- project goal -->
         <!-- <section no-data-background="img/1200px-Arabidopsis_thaliana_2.jpg"> -->
@@ -172,6 +133,36 @@
             DNA/protein interactions</span> with disease-associated regions of
             the human genome.</p>
           </section>
+
+          <section>
+            <h2 class="bar">Background</h2>
+            <p>Information flow from DNA &rarr; proteins</p>
+            <a href="https://en.wikipedia.org/wiki/Central_dogma_of_molecular_biology">
+              <figure>
+                <img style="height:300px" src="img\Central_Dogma_of_Molecular_Biochemistry_with_Enzymes.jpg">
+              </figure>
+            </a>
+            <div class="credit">
+              <p>
+                source: <a href="https://en.wikipedia.org/wiki/Central_dogma_of_molecular_biology">
+                Central dogma of molecular biology</a>
+              </p>
+            </div>
+          </section>
+          <section>
+            <h2 class="bar">That's "Functional genomics"</h2>
+            <p>
+              It's a field of molecular biology that draws insight from
+              whole-genome sequencing data (<em>e.g.</em>, from the <a
+              href="https://en.wikipedia.org/wiki/Human_Genome_Project">Human
+              Genome Project</a>)
+            </p>
+            <p class="fragment">
+              &hellip;to describe gene and protein interactions, and their
+              functions within an organism.
+            </p>
+          </section>
+ 
           <section>
             <h2 class="bar">
               Designing a reusable solution
@@ -179,31 +170,16 @@
             <p>It's a common use case for bioinformaticicans to want to create web
             interfaces for their tools, so that non-Unixy collaborators can
             use them.</p>
-
-            <div class="fragment">
-              <blockquote>
-                "Instead of attacking isolated problems, I made the resolution
-                that I would never again solve an isolated problem except as
-                characteristic of a class."
-              </blockquote>
-              <p style="text-align:right;font-size:large;">&mdash;<a
-                href="https://en.wikipedia.org/wiki/Richard_Hamming">Richard
-                Hamming</a> (1915 &ndash; 1998)</p>
-            </div> <!-- fade-up -->
-            <div class="credit">
-              <p>source: <a href="http://www.paulgraham.com/hamming.html">Richard
-                Hamming: You and Your Research</a></p>
-            </div>
           </section>
           <section>
             <h2 class="bar">&hellip;and so:</h2>
             <p>
-              In the design of the analysis tool, we intend to produce a
-              <span class="hilite">modular application framework</span>,
-              designed in such a way as to facilitate <span class="hilite">code
-              re-use</span>, addressing a more general class of problem: quickly
-              adding a web interface on top of an existing bioinformatics analysis
-              pipeline.
+              We intend to produce a modular, reusable solution for a more
+              general class of problem:
+            </p>
+            <p class="fragment">
+              quickly adding a web interface on top of an existing
+              (command line-based) bioinformatics analysis pipeline.
             </p>
           </section>
         </section> <!-- project goal -->
@@ -516,101 +492,10 @@
               </figcaption>
             </figure>
           </section>
-
         </section><!-- ui wireframes -->
 
-        <!-- progress -->
-        <section no-data-background="img/inra_dist_22612133671.jpg">
-          <section>
-            <h1 class="bar">Progress so far&hellip;</h1>
-            <p>A big chunk of the effort was getting a common development
-            environment for the team to work on</p>
 
-            <pre><code class="bash">
-$ git clone git@github.uc.edu:Bioreactor/bioreactor-vm.git
-$ vagrant box add bioreactor http://url.to/bioreactor.box
-$ vagrant up
-            </code></pre>
-
-            <p>
-              We chose <a href="https://vagrantup.com">Vagrant</a> to manage the
-              VM environment, and <a href="https://www.ansible.com/">Ansible</a>
-              for automated software installation and configuration
-            </p>
-          </section>
-
-          <section>
-            <h2 class="bar">VM dev environment</h2>
-            <ul>
-              <li>
-                the VM "base box" is created from a Debian Jessie ISO using
-                <a href="https://github.com/jedi4ever/veewee">veewee</a>
-              </li>
-              <ul>
-                <li class="fragment">base box includes only
-                <a href="https://github.uc.edu/Bioreactor/bioreactor-vm/tree/master/definitions/bioreactor-jessie">essential</a>
-                packages</li>
-              </ul>
-              <li class="fragment">
-                Vagrant creates a new VirtualBox VM from the <a href="https://www.vagrantup.com/docs/boxes/base.html">base box</a>
-              </li>
-              <li class="fragment">
-                and handles SSH key generation / exchange and
-                <a href="https://github.uc.edu/Bioreactor/bioreactor-vm/blob/master/Vagrantfile#L25">port forwarding</a>
-                to the host OS
-              </li>
-              <li class="fragment">
-                Ansible installs <a href="https://github.uc.edu/Bioreactor/bioreactor-vm/blob/master/provisioning/group_vars/all#L24">remaining packages</a>
-                for a base Python dev environment
-              </li>
-              <li class="fragment">with Apache for serving static files</li>
-            </ul>
-            <blockquote class="fragment">
-              There's a public starter repository
-              <a href="https://github.com/QuickFixes/web-dev-with-friends">on GitHub</a>
-              if your team is in a similar situation.
-            </blockquote>
-          </section> <!-- vm dev environment -->
-
-          <section>
-            <h2 class="bar">Running Bioreactor</h2>
-
-            <p>Bioreactor is built with Python and the
-            <a href="http://flask.pocoo.org/">Flask web framework</a></p>
-
-            <p class="fragment">The automatic setup ("provisioning") process
-            for the VM clones the web application repository, but doesn't
-            actually launch it (yet)</p>
-
-            <h3 class="fragment">Here's how you'd do that:</h2>
-
-            <pre class="fragment"><code class="bash">
-    cd /path/to/where/you/cloned/bioreactor
-
-    # create a "virtual environment" for our dependencies
-    virtualenv venv
-    source venv/bin/activate
-
-    # install the dependencies using the virtualenv's copy of 'pip'
-    pip install -r requirements.txt
-
-    # Initialize the database tables and launch the Flask dev server
-    export FLASK_APP=bioreactor/bioreactor.py
-    flask initdb
-    flask run
-            </code></pre>
-          </section>
-
-          <section>
-            <h3>And here's what that looks like...</h3>
-            <p>
-              (with help from
-              <a href="https://www.pythonanywhere.com/">PythonAnywhere</a>)
-            </p>
-           </section>
-        </section> <!-- progress -->
-
-        <section class="embed" data-state="embed" no-data-background-iframe="https://bioreactor:supersecret@ernstki.pythonanywhere.com">
+        <section class="embed" data-state="embed" data-background-iframe="https://bioreactor:supersecret@ernstki.pythonanywhere.com">
         </section>
 
         <!-- milestones -->
@@ -731,6 +616,97 @@ $ vagrant up
         </section>
         <!-- results -->
 
+        <!-- progress -->
+        <section no-data-background="img/inra_dist_22612133671.jpg">
+          <section>
+            <h1 class="bar">Progress so far&hellip;</h1>
+            <p>A big chunk of the effort was getting a common development
+            environment for the team to work on</p>
+
+            <pre><code class="bash">
+    $ git clone git@github.uc.edu:Bioreactor/bioreactor-vm.git
+    $ vagrant box add bioreactor http://url.to/bioreactor.box
+    $ vagrant up
+            </code></pre>
+
+            <p>
+              We chose <a href="https://vagrantup.com">Vagrant</a> to manage the
+              VM environment, and <a href="https://www.ansible.com/">Ansible</a>
+              for automated software installation and configuration
+            </p>
+          </section>
+
+          <section>
+            <h2 class="bar">VM dev environment</h2>
+            <ul>
+              <li>
+                the VM "base box" is created from a Debian Jessie ISO using
+                <a href="https://github.com/jedi4ever/veewee">veewee</a>
+              </li>
+              <ul>
+                <li class="fragment">base box includes only
+                <a href="https://github.uc.edu/Bioreactor/bioreactor-vm/tree/master/definitions/bioreactor-jessie">essential</a>
+                packages</li>
+              </ul>
+              <li class="fragment">
+                Vagrant creates a new VirtualBox VM from the <a href="https://www.vagrantup.com/docs/boxes/base.html">base box</a>
+              </li>
+              <li class="fragment">
+                and handles SSH key generation / exchange and
+                <a href="https://github.uc.edu/Bioreactor/bioreactor-vm/blob/master/Vagrantfile#L25">port forwarding</a>
+                to the host OS
+              </li>
+              <li class="fragment">
+                Ansible installs <a href="https://github.uc.edu/Bioreactor/bioreactor-vm/blob/master/provisioning/group_vars/all#L24">remaining packages</a>
+                for a base Python dev environment
+              </li>
+              <li class="fragment">with Apache for serving static files</li>
+            </ul>
+            <blockquote class="fragment">
+              There's a public starter repository
+              <a href="https://github.com/QuickFixes/web-dev-with-friends">on GitHub</a>
+              if your team is in a similar situation.
+            </blockquote>
+          </section> <!-- vm dev environment -->
+
+          <section>
+            <h2 class="bar">Running Bioreactor</h2>
+
+            <p>Bioreactor is built with Python and the
+            <a href="http://flask.pocoo.org/">Flask web framework</a></p>
+
+            <p class="fragment">The automatic setup ("provisioning") process
+            for the VM clones the web application repository, but doesn't
+            actually launch it (yet)</p>
+
+            <h3 class="fragment">Here's how you'd do that:</h2>
+
+            <pre class="fragment"><code class="bash">
+    cd /path/to/where/you/cloned/bioreactor
+
+    # create a "virtual environment" for our dependencies
+    virtualenv venv
+    source venv/bin/activate
+
+    # install the dependencies using the virtualenv's copy of 'pip'
+    pip install -r requirements.txt
+
+    # Initialize the database tables and launch the Flask dev server
+    export FLASK_APP=bioreactor/bioreactor.py
+    flask initdb
+    flask run
+            </code></pre>
+          </section>
+
+          <section>
+            <h3>And here's what that looks like...</h3>
+            <p>
+              (with help from
+              <a href="https://www.pythonanywhere.com/">PythonAnywhere</a>)
+            </p>
+           </section>
+        </section> <!-- progress -->
+
         <!-- credits -->
         <section no-data-background="img/inra_dist_22726188208.jpg">
           <section>
@@ -795,34 +771,6 @@ $ vagrant up
             </ul>
           </section>
         </section> <!-- Credits -->
-        <section>
-          <section>
-            <h1 class="bar">Broader Impact</h1>
-            <img src="http://mytoba.ca/content/uploads/2016/02/crop_620x350_20160208_331PM.jpg">
-          </section>
-          <section>
-            <h1 class="bar">Main Impact</h1>
-            <ul>
-              <li>
-                aids non-profit organizations for continued efforts of research
-              </li>
-              <li>
-                speeds up research to find links between diseases and viral DNA
-              </li>
-              <li>
-                framework to allow new tools to be made quickly
-              </li>
-            </ul>
-          </section>
-          <section>
-            <h1 class="bar">Beneficial Side Effect</h1>
-            <ul>
-              <li>
-                open source - helps bioinformaticians learn to construct own tools
-              </li>
-            </ul>
-          </section>
-        </section>
 
         <!-- <section no-data-background="img/blueridgekitties_3823220154.jpg"> -->
         <section no-data-background="img/large-cumulus-clouds-1.jpg">
