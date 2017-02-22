@@ -198,69 +198,74 @@
 
         </section> <!-- project goals -->
 
-        <!-- intellectual merits -->
-        <section no-data-background="img/blueridgekitties_3823220154.jpg">
-          <section>
-            <h2 class="bar">Intellectual Merits</h2>
+        <!-- intellectual merits --> 
+        <section no-data-background="img/blueridgekitties_3823220154.jpg"> 
+          <section> 
+            <h1 class="bar">Intellectual Merits</h1> 
 
-            <!--
-            Statements about the interesting, novel, or original contributions
-            of the project.
-            -->
-            <p>Bioreactor is comprised of a web-based user interface that
-            interfaces with an HPC cluster to produce database intersections.
+            <!-- 
+            Statements about the interesting, novel, or original contributions 
+            of the project. 
+            --> 
+            <p>Bioreactor is comprised of a web-based user interface that works
+            with a computational cluster to identity similarities between viral
+            and human transcriptional machinery.
+            
+            As such, we've had to tackle development on three fronts:</p> 
 
-            As such, we've had to tackle development on three fronts:</p>
+            <!-- 
+            Software Design involves both UI Design and 
+            Writing Intelligent Code. 
+            --> 
+            <p class="fragment">Software Design</p> 
+            <!-- 
+            "Interesting" is a spectrum with differing opinion. 
+            Web Development is general is interesting to me as it is 
+            my first time ever working with it. 
+            --> 
+            <p class="fragment">Web Development</p> 
+            <!-- 
+            This is all working with the Cluster. 
+            If we want to touch on technologies early, now is a 
+            good place to mention deferred work queue and stuff like that. 
+            --> 
+            <p class="fragment">High-Performance Computing</p> 
 
-            <!--
-            Software Design involves both UI Design and
-            Writing Intelligent Code.
-            -->
-            <p class="fragment hilite">Software Design</p>
-            <!--
-            "Interesting" is a spectrum with differing opinion.
-            Web Development is general is interesting to me as it is
-            my first time ever working with it.
-            -->
-            <p class="fragment hilite">Web Development</p>
-            <!--
-            This is all working with the Cluster.
-            If we want to touch on technologies early, now is a
-            good place to mention deferred work queue and stuff like that.
-            -->
-            <p class="fragment hilite">High-Performance Computing</p>
+          </section> 
+          <section> 
+            <h2 class="bar"> 
+              Software Design 
+            </h2> 
+            <!-- Intelligent User Interfacing + Code Design --> 
+            <p>Since this project was meant to have a reusable framework, the 
+            Code Design must be simplistic enough that it may be implemented 
+            by other developers.</p> 
 
-          </section>
-          <section>
-            <h2 class="bar">
-              Software Design
-            </h2>
-            <!-- Intelligent User Interfacing + Code Design -->
-            <p>Since this project was meant to have a reusable framework, the
-            Code Design must be simplistic enough that it may be implemented
-            by other developers.</p>
-
-            <p class="fragment">The UI Design must be clear and concise.
-            As with all UI Design, there should be no surprises.</p>
-          </section>
-          <section>
-            <h2 class="bar">
-              Web Development
-            </h2>
-            <p>Our UI will be hosted online and this opens up more technology
-            concerns given that the data our tool analyzes may be sensitive in
-            nature.</p>
-          </section>
-          <section>
-            <h2 class="bar">
-              High-Performance Computing
-            </h2>
-            <p>The core of our tool is the cluster that is actually able to run
-            the jobs we feed to it. </p>
-            <p class="fragment"> In order to run these jobs we use a Deferred
-            Work Queue. This ensures jobs start and finish in a timely manner.
-            </p>
-          </section>
+            <p class="fragment">The UI Design must be streamlined with sensible
+            defaults. It should be usable by biologists and virologists.</p> 
+          </section> 
+          <section> 
+            <h2 class="bar"> 
+              Web Development 
+            </h2> 
+            <p> 
+              As a public tool hosted online, application and data security
+              become concerns. 
+            </p> 
+          </section> 
+          <section> 
+            <h2 class="bar"> 
+              High-Performance Computing 
+            </h2> 
+            <p> 
+              The Children's HPC cluster performs the core computations of our
+              tool, using data from the web interface. 
+            </p> 
+            <p class="fragment"> 
+              Job requests use a deferred work queue to ensure multiple,
+              concurrent requests to the front end are not blocked. 
+            </p> 
+          </section> 
         </section>
 
         <!-- broader impacts -->
