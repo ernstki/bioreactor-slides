@@ -838,6 +838,12 @@
         ]
       });
 
+      // Slide every 20 seconds
+      Reveal.configure({
+        autoSlide: 20000,
+        slideNumber: true
+      });
+      
       // Remove background tint on all sections with 'embed' in their class list
       Array.prototype.forEach.call(
         document.getElementsByClassName('slide-background embed'),
