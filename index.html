@@ -368,7 +368,7 @@
           <section>
             <h2 class="bar">Validation / submission</h2>
             <p class="pad-me">
-              The analysis has has tunable parameters, most of which are
+              The analysis has tunable parameters, most of which are
               queried from REST endpoints on the server.
             </p>
           </section>
@@ -461,23 +461,23 @@
             <h1 class="bar">Milestones</h1>
             <div style="text-align:left;padding-left:1.5em;">
               <p>
-                <h4 class="nofragment">Development VM</h4>
+                <h4 class="fragment">Development VM</h4>
                 <ul>
-                  <li class="fragment highlight-green">For easier development
+                  <li class="fragment">For easier development
                 </ul>
               </p>
 
               <p>
-                <h4 class="nofragment">Deferred task queue</h4>
+                <h4 class="fragment">Deferred task queue</h4>
                 <ul>
-                  <li class="fragment highlight-green">Accepts and handles cluster jobs
+                  <li class="fragment">Accepts and handles cluster jobs
                 </ul>
               </p>
 
               <p>
-                <h4 class="nofragment">Front-end UI</h4>
+                <h4 class="fragment">Front-end UI</h4>
                 <ul>
-                  <li class="fragment highlight-green">Simple and easy to use
+                  <li class="fragment">Simple and easy to use
                 </ul>
               </p>
             </div>
@@ -487,29 +487,29 @@
             <h2 class="bar">Milestones (cont'd)</h2>
             <div style="text-align:left;padding-left:1.5em;">
               <p>
-                <h4 class="nofragment">REST APIs</h4>
+                <h4 class="fragment">REST APIs</h4>
                 <ul>
-                  <li class="fragment highlight-green">For retrieving
+                  <li class="fragment">For retrieving
                     available datasets and job status
                 </ul>
               </p>
 
               <p>
-                <h4 class="nofragment">Back-end management interface</h4>
+                <h4 class="fragment">Back-end management interface</h4>
                 <ul>
-                  <li class="fragment highlight-green">Users, roles, etc.
+                  <li class="fragment">Managing users, roles, etc.
                 </ul>
               </p>
               <p>
-                <h4 class="nofragment">Visualizations</h4>
+                <h4 class="fragment">Visualizations</h4>
                 <ul>
-                  <li class="fragment highlight-green">Because some of us are visual learners
+                  <li class="fragment">To make data easier to understand
                 </ul>
               </p>
               <p>
-                <h4 class="nofragment">Benchmarking</h4>
+                <h4 class="fragment">Benchmarking</h4>
                 <ul>
-                  <li class="fragment highlight-green">Generate reports
+                  <li class="fragment">Generate reports
                 </ul>
               </p>
             </div>
@@ -517,68 +517,12 @@
         </section>
         <!-- milestones -->
 
-        <!-- results -->
-        <section no-data-background="img/inra_dist_22600912055.jpg">
-          <section>
-            <h1 class="bar">Results</h1>
-            <div style="text-align:left;padding-left:1.5em;">
-              <p>
-                <p>
-                  <h4 class="nofragment">Development VM</h4>
-                  <ul>
-                    <li class="fragment highlight-green">Demonstrated 10/14/16</li>
-                  </ul>
-                </p>
-                <p>
-                  <h4 class="nofragment">Deferred task queue</h4>
-                  <ul>
-                    <li class="fragment highlight-green">Demonstrated 11/14/16</li>
-                  </ul>
-                </p>
-                <p>
-                  <h4 class="nofragment">Front-end UI</h4>
-                  <ul>
-                    <li class="fragment highlight-green">Demonstrated 12/01/16</li>
-                  </ul>
-                </p>
-                <p>
-                  <h4 class="nofragment">REST APIs</h4>
-                  <ul>
-                    <li class="fragment highlight-green">Demonstrated 12/01/16</li>
-                  </ul>
-                </p>
-                <p>
-                  <h4 class="nofragment">Back-end management interface</h4>
-                  <ul>
-                    <li class="fragment highlight-green">Demonstrated 01/20/17</li>
-                  </ul>
-                </p>
-              </p>
-            </div>
-          </section>
-          <section>
-            <h2 class="bar">Results (cont'd)</h2>
-            <div style="text-align:left;padding-left:1.5em;">
-              <p>
-                <h3 class="nofragment">Future work:</h3>
-                <ul>
-                  <li class="fragment highlight-green">Connect back-end interface
-                  <li class="fragment highlight-green">Visualizations
-                  <li class="fragment highlight-green">Benchmarking reports
-                  <li class="fragment highlight-green">Front-end finishing touches
-                </ul>
-              </p>
-            </div>
-          </section>
-        </section>
-        <!-- results -->
-
-        <!-- progress -->
+        <!-- progress
         <section no-data-background="img/inra_dist_22612133671.jpg">
           <section>
             <h1 class="bar">Progress so far&hellip;</h1>
-            <p>A big chunk of the effort was getting a common development
-            environment for the team to work on</p>
+            <p>Getting a common development
+            environment for the team</p>
 
             <pre><code class="bash">
     $ git clone git@github.uc.edu:Bioreactor/bioreactor-vm.git
@@ -597,11 +541,11 @@
             <h2 class="bar">VM dev environment</h2>
             <ul>
               <li>
-                the VM "base box" is created from a Debian Jessie ISO using
+                The VM "base box" is created from a Debian Jessie ISO using
                 <a href="https://github.com/jedi4ever/veewee">veewee</a>
               </li>
               <ul>
-                <li class="fragment">base box includes only
+                <li class="fragment">Includes only
                 <a href="https://github.uc.edu/Bioreactor/bioreactor-vm/tree/master/definitions/bioreactor-jessie">essential</a>
                 packages</li>
               </ul>
@@ -609,7 +553,7 @@
                 Vagrant creates a new VirtualBox VM from the <a href="https://www.vagrantup.com/docs/boxes/base.html">base box</a>
               </li>
               <li class="fragment">
-                and handles SSH key generation / exchange and
+                Handles SSH key generation / exchange and
                 <a href="https://github.uc.edu/Bioreactor/bioreactor-vm/blob/master/Vagrantfile#L25">port forwarding</a>
                 to the host OS
               </li>
@@ -617,15 +561,17 @@
                 Ansible installs <a href="https://github.uc.edu/Bioreactor/bioreactor-vm/blob/master/provisioning/group_vars/all#L24">remaining packages</a>
                 for a base Python dev environment
               </li>
-              <li class="fragment">with Apache for serving static files</li>
+              <li class="fragment">Uses Apache for serving static files</li>
             </ul>
+            <!--
             <blockquote class="fragment">
               There's a public starter repository
               <a href="https://github.com/QuickFixes/web-dev-with-friends">on GitHub</a>
               if your team is in a similar situation.
             </blockquote>
+          --><!--
           </section> <!-- vm dev environment -->
-
+<!--
           <section>
             <h2 class="bar">Running Bioreactor</h2>
 
@@ -635,9 +581,6 @@
             <p class="fragment">The automatic setup ("provisioning") process
             for the VM clones the web application repository, but doesn't
             actually launch it (yet)</p>
-
-            <h3 class="fragment">Here's how you'd do that:</h2>
-
             <pre class="fragment"><code class="bash">
     cd /path/to/where/you/cloned/bioreactor
 
@@ -663,9 +606,74 @@
             </p>
            </section>
         </section> <!-- progress -->
-
+<!--
         <section class="embed" data-state="embed" data-background-iframe="https://bioreactor:supersecret@ernstki.pythonanywhere.com">
         </section>
+ end of progress section -->
+        <!-- results -->
+        <section no-data-background="img/inra_dist_22600912055.jpg">
+          <section>
+            <h1 class="bar">Results</h1>
+            <div style="text-align:left;padding-left:1.5em;">
+              <p>
+                <p>
+                  <h4 class="nofragment">Development VM</h4>
+                  <ul>
+                    <li class="fragment">Demonstrated 10/14/16</li>
+                  </ul>
+                </p>
+                <p>
+                  <h4 class="nofragment">Deferred task queue</h4>
+                  <ul>
+                    <li class="fragment">Demonstrated 11/14/16</li>
+                  </ul>
+                </p>
+                <p>
+                  <h4 class="nofragment">Front-end UI</h4>
+                  <ul>
+                    <li class="fragment">Demonstrated 12/01/16</li>
+                  </ul>
+                </p>
+              </div>
+            </section>
+            <section>
+              <h2 class="bar">Results (cont'd)</h2>
+              <div style="text-align:left;padding-left:1.5em;">
+                <p>
+                  <h4 class="nofragment">REST APIs</h4>
+                  <ul>
+                    <li class="fragment">Demonstrated 12/01/16</li>
+                  </ul>
+                </p>
+                <p>
+                  <h4 class="nofragment">Back-end management interface</h4>
+                  <ul>
+                    <li class="fragment">Demonstrated 01/20/17</li>
+                  </ul>
+                </p>
+              </p>
+            </div>
+          </section>
+        </section>
+        <!-- results -->
+
+        <!-- last result slide -->
+        <section no-data-background="img/inra_dist_22600912055.jpg">
+          <section>
+            <h2 class="bar">Future Work</h2>
+            <div style="text-align:left;padding-left:1.5em;">
+              <p>
+                <ul>
+                  <li class="fragment">Connect back-end interface
+                  <li class="fragment">Front-end finishing touches
+                  <li class="fragment">Visualizations
+                  <li class="fragment">Benchmarking reports
+                </ul>
+              </p>
+            </div>
+          </section>
+        </section>
+        <!-- last result slide -->
 
         <!-- credits -->
         <section no-data-background="img/inra_dist_22726188208.jpg">
