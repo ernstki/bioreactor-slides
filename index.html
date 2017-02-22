@@ -118,30 +118,54 @@
         <!-- <section no-data-background="img/1200px-Arabidopsis_thaliana_2.jpg"> -->
         <section no-data-background="img/blueridgekitties_3823220154.jpg">
           <section>
-            <h1 class="bar">Project Goals</h1>
-            <ol class="pad-me-more">
-              <li class="">
-                create a <span class="hilite">web-based bioinformatics analysis
-                tool</span> for investigating interactions between human and
-                viral DNA sequences and proteins.</p>
-              </li>
-
-              <li class="fragment">
+            <h1 class="bar">Project Goal #1</h1>
+            <p class="pad-me">
+                Create a <span class="hilite">web-based functional genomics
+                analysis tool</span> for investigating interactions between
+                human and viral DNA sequences and proteins
+              <!--li class="fragment">
               benefit research into the genetic origins of a certain class of
               diseases by <span class="hilite">illuminating the role of these
               interactions</span> with disease-associated regions of the human
-              genome.</li>
-            </ol>
+              genome.</li-->
+            </p>
           </section>
 
           <section>
+            <h2 class="bar">"Functional genomics"</h2>
+            <p class="pad-me">
+              It's a field of molecular biology that draws insight from
+              whole-genome sequencing data<br> (<em>e.g.</em>, the <a
+              href="https://en.wikipedia.org/wiki/Human_Genome_Project">Human
+              Genome Project</a>)
+            </p>
+            <p class="fragment pad-me">
+              &hellip;to describe gene and protein interactions and their
+              functions within an organism.
+            </p>
+          </section>
+          <section>
             <h1 class="bar">Background</h1>
-            <p>Information flow from DNA &rarr; proteins</p>
-            <a href="https://en.wikipedia.org/wiki/Central_dogma_of_molecular_biology">
-              <figure>
-                <img style="height:300px" src="img/Central_Dogma_of_Molecular_Biochemistry_with_Enzymes.jpg">
-              </figure>
-            </a>
+            <div style="width:50%;display:block;float:left">
+              <p>
+                Information flow: DNA &rarr; proteins
+              </p>
+              <ul>
+                <li class="fragment">
+                  most generally: <span class="hilite">DNA
+                  makes RNA and RNA makes protein</span>
+                </li>
+                <li class="fragment">
+                  but many, many other interactions exist, including reverse
+                  flow of information 
+                </li>
+              </ul>
+            </div>
+            <figure style="float:left;margin-left:3em;">
+              <a href="https://en.wikipedia.org/wiki/Central_dogma_of_molecular_biology">
+                <img style="height:350px" src="img/Central_Dogma_of_Molecular_Biochemistry_with_Enzymes.jpg">
+              </a>
+            </figure>
             <div class="credit">
               <p>
                 source: <a href="https://en.wikipedia.org/wiki/Central_dogma_of_molecular_biology">
@@ -149,41 +173,30 @@
               </p>
             </div>
           </section>
+
           <section>
-            <h2 class="bar">"Functional genomics"</h2>
+            <h1>Project Goal #2</h1>
             <p class="pad-me">
-              It's a field of molecular biology that draws insight from
-              whole-genome sequencing data (<em>e.g.</em>, from the <a
-              href="https://en.wikipedia.org/wiki/Human_Genome_Project">Human
-              Genome Project</a>)
-            </p>
-            <p class="fragment pad-me">
-              &hellip;to describe gene and protein interactions, and their
-              functions within an organism.
+              Develop a <span class="hilite">reusable, open-source
+              framework</span> which could be used as a basis for new
+              bioinformatics analysis tools
             </p>
           </section>
- 
+
           <section>
-            <!-- FIXME: This should be moved after Ben's slides -->
             <h3 class="bar">
-              Designing a reusable solution
+              Developing a reusable solution
             </h3>
-            <p class="pad-me">It's a common use case for bioinformaticicans to
-            want to create web interfaces for their tools, so that non-Unixy
-            collaborators can use them.</p>
-          </section>
-          <section>
-            <h2 class="bar">&hellip;and so:</h2>
-            <p class="pad-me">
-              We intend to produce a modular, reusable solution for a more
-              general class of problem:
-            </p>
-            <p class="pad-me fragment">
-              quickly adding a web interface on top of an existing
-              (command line-based) bioinformatics analysis pipeline.
+            <p class="pad-me">Bioinformaticicans often want web interfaces for
+            their tools, so that non-Unixy collaborators can use them.</p>
+            <p class="fragment pad-me">
+              &hellip; so we intend to produce a <span class="hilite">modular,
+              reusable framework</span> for quickly adding a web interface on
+              top of an existing analysis pipeline.
             </p>
           </section>
-        </section> <!-- project goal -->
+
+        </section> <!-- project goals -->
 
         <!-- intellectual merits -->
         <section no-data-background="img/blueridgekitties_3823220154.jpg">
@@ -195,26 +208,27 @@
             of the project.
             -->
             <p>Bioreactor is comprised of a web-based user interface that
-            works with a computational cluster to produce database intersections.
+            interfaces with an HPC cluster to produce database intersections.
+
             As such, we've had to tackle development on three fronts:</p>
 
             <!--
             Software Design involves both UI Design and
             Writing Intelligent Code.
             -->
-            <p class="fragment">Software Design</p>
+            <p class="fragment hilite">Software Design</p>
             <!--
             "Interesting" is a spectrum with differing opinion.
             Web Development is general is interesting to me as it is
             my first time ever working with it.
             -->
-            <p class="fragment">Web Development</p>
+            <p class="fragment hilite">Web Development</p>
             <!--
             This is all working with the Cluster.
             If we want to touch on technologies early, now is a
             good place to mention deferred work queue and stuff like that.
             -->
-            <p class="fragment">High-Performance Computing</p>
+            <p class="fragment hilite">High-Performance Computing</p>
 
           </section>
           <section>
@@ -257,29 +271,31 @@
           </section>
           <section>
             <h1 class="bar">Main Impact</h1>
-            <ul>
+            <ul class="pad-me">
               <li>
-                direct benefit to Weirauch Lab research on viral TFs
+                direct benefit to ongoing <span class="hilite">Weirauch Lab
+                research on viral TFs</span>
               </li>
-              <li>
-                aids discovery of disease-related links between human
-                / viral DNA
+              <li class="fragment">
+                facilitates discovery of <span class="hilite">disease-related
+                links between human / viral DNA</span>
               </li>
-              <li>
-                framework allows new analysis tools to be spun up quickly
-              </li>
+              <!--li>
+                reusable framework will allow new analysis tools to be spun up
+                quickly
+              </li-->
             </ul>
           </section>
           <section>
             <h1 class="bar">Side Benefits</h1>
             <ul>
               <li>
-                open source - bioinformaticians can construct web UI for own tools
+                open source; researchers can construct web UI for own tools
               </li>
-              <li>
+              <li class="fragment">
                 possible code contributions from other developers
               </li>
-              <li>
+              <li class="fragment">
                 feedback from users (<em>e.g.</em>, on GitHub issue tracker)
               </li>
             </ul>
@@ -421,6 +437,11 @@
           <!-- </section> -->
 
         </section><!-- plumbing -->
+
+        <section data-background="img/bioreactor_responsive.gif"
+         data-background-video-loop="true"
+        >
+        </section>
 
         <!-- ui wireframes -->
         <section no-data-background="img/blueridgekitties_3836211195.jpg">

@@ -59,13 +59,16 @@ figcaption {
    font-size: 0.8em !important;
 }
 
+
+/* for citations and image credits */
 .credit {
   min-height: 0.7em;
   background: rgba(0,0,0,0.8);
+  clear:both;
 }
 
 .credit p {
-  font-size: medium;
+  font-size: large;
   /* I know, I know */
   margin: 5em 3em 0 !important;
 }
@@ -300,7 +303,7 @@ figcaption {
   /* source: https://css-tricks.com/overriding-the-default-text-selection-color-with-css/ */
   /* color: #fff2a8; */ /* yellow */
   color: #a8d1ff; /* blue */
-  font-weight: bold !important;
+  font-weight: 400 !important;
 }
 
 .reveal a img {
