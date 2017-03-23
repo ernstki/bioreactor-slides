@@ -85,10 +85,10 @@
               <a href="mailto:ernstki -at- cchmc.org">Kevin Ernst</a></br>
             </p>
 
-            <p class="fragment">
+            <p class="no-fragment">
               We are collaborating with <a href="https://www.cincinnatichildrens.org/bio/w/matthew-weirauch">Dr. Matt Weirauch</a>
               <br>at Cincinnati Children's Hospital</p>
-            <p class="fragment">Our faculty advisor is
+            <p class="no-fragment">Our faculty advisor is
             <a href="http://ceas.uc.edu/dee/faculty_staff/dr_karen_c_davis.html">
               Dr. Karen Davis
             </a> of CEAS
@@ -139,7 +139,7 @@
               href="https://en.wikipedia.org/wiki/Human_Genome_Project">Human
               Genome Project</a>)
             </p>
-            <p class="fragment pad-me">
+            <p class="no-fragment pad-me">
               &hellip;to describe gene and protein interactions and their
               functions within an organism.
             </p>
@@ -151,11 +151,11 @@
                 Information flow: DNA &rarr; proteins
               </p>
               <ul>
-                <li class="fragment">
+                <li class="no-fragment">
                   most generally: <span class="hilite">DNA
                   makes RNA and RNA makes protein</span>
                 </li>
-                <li class="fragment">
+                <li class="no-fragment">
                   but many, many other interactions exist, including reverse
                   flow of information 
                 </li>
@@ -189,7 +189,7 @@
             </h3>
             <p class="pad-me">Bioinformaticicans often want web interfaces for
             their tools, so that non-Unixy collaborators can use them.</p>
-            <p class="fragment pad-me">
+            <p class="no-fragment pad-me">
               &hellip; so we intend to produce a <span class="hilite">modular,
               reusable framework</span> for quickly adding a web interface on
               top of an existing analysis pipeline.
@@ -281,7 +281,7 @@
                 direct benefit to ongoing <span class="hilite">Weirauch Lab
                 research on viral TFs</span>
               </li>
-              <li class="fragment">
+              <li class="no-fragment">
                 facilitates discovery of <span class="hilite">disease-related
                 links between human / viral DNA</span>
               </li>
@@ -297,10 +297,10 @@
               <li>
                 open source; researchers can construct web UI for own tools
               </li>
-              <li class="fragment">
+              <li class="no-fragment">
                 possible code contributions from other developers
               </li>
-              <li class="fragment">
+              <li class="no-fragment">
                 feedback from users (<em>e.g.</em>, on GitHub issue tracker)
               </li>
             </ul>
@@ -353,7 +353,7 @@
     chr1    11873    14409    uc001aaa.3    0
 
             </code></pre>
-            <p class="fragment">
+            <p class="no-fragment">
               Specification describes up to 6 columns (BED6):<br>
               chr, start, stop, label, score, and strand (+/-)
             </p>
@@ -389,8 +389,13 @@
           <section>
             <h2 class="bar">Validation / submission</h2>
             <p class="pad-me">
-              The analysis has tunable parameters, most of which are
-              queried from REST endpoints on the server.
+              Each analysis has input form elements for tunable parameters,
+              the contents of which are queried from REST endpoints on the
+              server.
+            </p>
+            <p class="pad-me">
+              The server will validate these and return any problems in a JSON
+              response to the POST request.
             </p>
           </section>
 
@@ -416,39 +421,57 @@
 
         <!-- plumbing -->
         <section no-data-background="img/flickr71183136_7131296647.jpg">
-          <section>
+          <section data-autoslide="15000">
             <h1 class="bar">Plumbing</h1>
             <ul class="pad-me">
               <li>Python + Flask web and console application</li>
-              <li class="fragment">Responsive HTML/CSS web framework</li>
-              <li class="fragment">Vue.js for form submission / API communication</li>
-              <li class="fragment">Celery + RabbitMQ deferred task queue</li>
-              <li class="fragment">SQLite database(s)
+              <li class="no-fragment">Responsive HTML/CSS web framework</li>
+              <li class="no-fragment">Vue.js for form submission / API communication</li>
+              <li class="no-fragment">Celery + RabbitMQ deferred task queue</li>
+              <li class="no-fragment">SQLite database(s)
                 <ul>
-                  <li class="fragment">
+                  <li class="no-fragment">
                     database calls go through an ORM so
                     "upgrading" to MySQL or Postgres is a trivial config
                     change
                   </li>
                 </ul>
               </li>
-              <li class="fragment">Slurm / LSF - batch processing systems</li>
+              <li class="no-fragment">Slurm / LSF - batch processing systems</li>
             </ul>
           </section>
 
-          <section data-background="img/bioreactor_responsive.gif"
-          data-background-video-loop="true"
-          >
+          <section no-data-background="img/click_demo.gif" data-autoslide="25000">
+            <h2 class="bar">Management Interface</h2>
+            <p class="pad-me">
+              Command-line interface for database / user management provided by the
+              <a href="http://click.pocoo.org/">Click</a> library
+            </p>
+
+            <img style="height:400px" class="plain" src="img/click_demo.gif">
           </section>
 
-          <section no-data-background="img/bioreactor_api.gif">
+          <section no-data-background="img/bioreactor_responsive.gif">
+            <h2 class="bar">Responsive Web UI</h2>
+            <p class="pad-me">
+              Big improvement over Bioreactor's predecessor, which did
+              not adapt to small-form factor screens
+            </p>
+
+            <img style="height:400px" class="plain" src="img/bioreactor_responsive.gif">
+          </section>
+
+          <section no-data-background="img/bioreactor_api.gif" data-autoslide="15000">
             <h1 class="bar">REST API</h1>
 
-            <!-- (<strong>HPC</strong>: <em>high-performance computing</em>) -->
-            (<strong><a href="https://en.wikipedia.org/wiki/Representational_state_transfer">REST</a></strong>:
-            <em>Representational State Transfer</em>)
+            <p>
+              <strong><a href="https://en.wikipedia.org/wiki/Representational_state_transfer">REST</a></strong>:
+              <em>Representational State Transfer</em><br>
+              Autocomplete / search functionality for a sample "organisms" table:
+            </p>
 
-            <img style="height:400px" class="plain" src="img/bioreactor_api.gif">
+            <img style="max-height:375px" class="plain" src="img/bioreactor_api.gif">
+
           </section>
 
           <!-- <section> -->
@@ -467,7 +490,7 @@
         </section><!-- plumbing -->
 
         <!-- ui wireframes -->
-        <section no-data-background="img/blueridgekitties_3836211195.jpg">
+        <!--section no-data-background="img/blueridgekitties_3836211195.jpg">
 
           <section>
             <h1 class="bar">Interface Design</h1>
@@ -497,7 +520,7 @@
               </figcaption>
             </figure>
           </section>
-        </section><!-- ui wireframes -->
+        </section--><!-- ui wireframes -->
 
         <!-- milestones -->
         <!--section no-data-background="img/inra_dist_22600912055.jpg">
@@ -581,31 +604,33 @@
             </p>
           </section>
 
-          <section>
+          <section data-autoslide="10000">
             <h2 class="bar">VM dev environment</h2>
             <ul>
               <li>
-                The VM "base box" is created from a Debian Jessie ISO using
-                <a href="https://github.com/jedi4ever/veewee">veewee</a>
+                The VM "base box" is created from a Debian 8.0 "Jessie" ISO
+                <!--using <a href="https://github.com/jedi4ever/veewee">veewee</a>-->
               </li>
               <ul>
-                <li class="fragment">Includes only
+                <li class="no-fragment">Includes only
                 <a href="https://github.uc.edu/Bioreactor/bioreactor-vm/tree/master/definitions/bioreactor-jessie">essential</a>
                 packages</li>
               </ul>
-              <li class="fragment">
+              <li class="no-fragment">
                 Vagrant creates a new VirtualBox VM from the <a href="https://www.vagrantup.com/docs/boxes/base.html">base box</a>
+                <ul>
+                  <li class="no-fragment">
+                    Handles SSH key generation / exchange and
+                    <a href="https://github.uc.edu/Bioreactor/bioreactor-vm/blob/master/Vagrantfile#L25">port forwarding</a>
+                    <!--to the host OS-->
+                  </li>
+                </ul>
               </li>
-              <li class="fragment">
-                Handles SSH key generation / exchange and
-                <a href="https://github.uc.edu/Bioreactor/bioreactor-vm/blob/master/Vagrantfile#L25">port forwarding</a>
-                to the host OS
-              </li>
-              <li class="fragment">
+              <li class="no-fragment">
                 Ansible installs <a href="https://github.uc.edu/Bioreactor/bioreactor-vm/blob/master/provisioning/group_vars/all#L24">remaining packages</a>
-                for a base Python dev environment
+                for a Python development environment
               </li>
-              <li class="fragment">Uses Apache for serving static files</li>
+              <li class="no-fragment">Includes RabbitMQ, Celery, Apache + mod_wsgi</li>
             </ul>
             <!--blockquote class="fragment">
               There's a public starter repository
@@ -614,20 +639,30 @@
             </blockquote-->
           </section> <!-- vm dev environment -->
 
-          <section>
+          <section no-data-background="img/bioreactor_setup.sh.gif" data-autoslide="30000">
+            <h1 class="bar">Shake 'n Bake</h1>
+            <p class="pad-me">
+              Provided <code>setup.sh</code> handles all initial setup tasks,
+              including making the Bioreactor server available at
+              <a href="http://localhost:9980">host port 9980</a>:
+            </p>
+            <img style="max-height:375px" class="plain" src="img/bioreactor_setup.sh.gif">
+          </section>
+
+          <section data-autoslide="12000">
             <h2 class="bar">Running Bioreactor</h2>
 
             <p class="no-fragment">The VM boots with the Flask app automatically
             running on startup, but a local development server can be started
             like this:</p>
 
-            <pre class="fragment"><code class="bash">
-    cd /path/to/where/you/cloned/bioreactor
+            <pre class="no-fragment"><code class="bash">
+    cd /path/to/cloned/bioreactor
 
     # create a "virtual environment" for our dependencies
     virtualenv venv && source venv/bin/activate
 
-    # install the dependencies using the virtualenv's 'pip'
+    # install dependencies and 'bioreactor' script
     pip install -e .
 
     # Initialize the database tables and launch server
@@ -637,7 +672,7 @@
           </section>
 
           <section>
-            <h3>And here's what that looks like...</h3>
+            <h3>And here's what<br>that looks like...</h3>
             <p>
               (with help from
               <a href="https://www.pythonanywhere.com/">PythonAnywhere</a>)
@@ -699,13 +734,14 @@
         <!-- last result slide -->
         <section no-data-background="img/inra_dist_22600912055.jpg">
           <section>
-            <h1 class="bar">Future Work</h1>
+            <h1 class="bar">Future Directions</h1>
             <div style="text-align:left;padding-left:1.5em;">
               <ul>
-                <li class="fragment">Management backend with logging and benchmarks
-                <li class="fragment">Sequence visualizations
-                <li class="fragment">Multiple analysis front-ends hosted
+                <li class="no-fragment">Management UI with logging and benchmarks
+                <li class="no-fragment">Sequence visualizations
+                <li class="no-fragment">Multiple analysis front-ends hosted
                   from a single Bioreactor instance (multi-tenancy)
+                <li class="no-fragment">Automated unit / integration tests
               </ul>
             </div>
           </section>
@@ -782,11 +818,11 @@
 
         <!-- <section no-data-background="img/blueridgekitties_3823220154.jpg"> -->
         <section no-data-background="img/large-cumulus-clouds-1.jpg">
-          <section>
+          <section data-autoslide="5000">
             <h1 class="bar">THE END</h1>
             <!-- <p><big><code>;)</code></big></p> -->
           </section>
-          <section>
+          <section data-autoslide="2000">
             <h3>Thanks.</h3>
             <img class="notplain" src="img/kitten+baby_owl.jpg">
           </section>
@@ -841,7 +877,7 @@
 
       // Slide every 20 seconds
       Reveal.configure({
-        autoSlide: 5000,
+        autoSlide: 8000,
         loop: true,
         slideNumber: true
       });
