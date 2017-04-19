@@ -875,12 +875,12 @@
         ]
       });
 
-      // Slide every 20 seconds
-      Reveal.configure({
-        autoSlide: 8000,
-        loop: true,
-        slideNumber: true
-      });
+      // Advance slides automatically; loop around
+      //Reveal.configure({
+      //  autoSlide: 8000,
+      //  loop: true,
+      //  slideNumber: true
+      //});
       
       // Remove background tint on all sections with 'embed' in their class list
       Array.prototype.forEach.call(
@@ -895,11 +895,11 @@
     </script>
 
     <!-- LiveReload support - http://livereload.com/ -->
-    <script>
+    <!--script>
       document.write(
           '<script src="http://' + (location.host || 'localhost').split(':')[0] +
           ':35729/livereload.js?snipver=1"></' + 'script>'
       );
-    </script>
+    </script-->
   </body>
 </html>
